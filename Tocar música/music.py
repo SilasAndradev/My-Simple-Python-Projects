@@ -1,7 +1,8 @@
 # importar a biblioteca pygame
 import pygame
 import os
-
+import os
+os.environ['SDL_AUDIODRIVER'] = 'dsp'
 
 
 pygame.mixer.init()
