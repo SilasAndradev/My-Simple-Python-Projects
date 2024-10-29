@@ -1,0 +1,9 @@
+1111;Tomate;4.78
+1112;feijão;5.78
+1113;Arroz;9.67
+1114;Fígado;6.78
+1115;rosas;3.5
+1116;Macarrão;7.45
+1117;Queijo;25.0
+1118;Coca-cola;8.0
+1119;Cocaina;10.0
