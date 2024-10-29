@@ -16,7 +16,7 @@ def menu():
         try:
             resposta = int(input('\033[0;33mSua Opção: \033[m'))
         except ValueError:     
-            print('\033[0;31mERRO! O usuário digitou um número invállido.\033[m')
+            print('\033[0;31mERRO! O usuário não digitou um número inteiro válido.\033[m')
         else:
                 if resposta > 4 or resposta < 1:
                     print('\033[0;31mERRO! O usuário digitou um número inteiro invállido.\033[m')

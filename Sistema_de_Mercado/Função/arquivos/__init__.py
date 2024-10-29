@@ -1,4 +1,4 @@
-from Sistema_de_Mercado.Interface import *
+from Interface import *
 from time import *
 def arquivoExiste(txt):
     try:

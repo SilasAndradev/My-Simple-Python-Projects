@@ -1,5 +1,5 @@
-from Sistema_de_Mercado.Interface import *
-from Sistema_de_Mercado.arquivos import *
+from Interface import *
+from arquivos import *
 
 arq = 'produtos.txt'
 
