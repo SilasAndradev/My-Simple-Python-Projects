@@ -14,5 +14,5 @@ questions = {
         ],
 }
 
-quiz(questions)
+tempo()
 
