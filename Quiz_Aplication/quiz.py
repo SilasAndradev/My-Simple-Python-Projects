@@ -24,6 +24,8 @@ while acabouQuest == False or acabouTemp == False:
     
     quiz_thread.start()
     tempo_thread.start()
-    quiz_thread.join()
-    tempo_thread.join()
+
+
+quiz_thread.join()
+tempo_thread.join()
     
