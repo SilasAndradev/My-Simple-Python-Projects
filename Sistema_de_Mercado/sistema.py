@@ -1,5 +1,5 @@
-from Interface import *
-from arquivos import *
+from Função.Interface import *
+from Função.arquivos import *
 
 arq = 'produtos.txt'
 
@@ -8,6 +8,7 @@ if not arquivoExiste(arq):
 
 while True:
     cabecalho('Mercado de Jadinho')
+    resposta = menu()
     resposta = menu()
     if resposta == 1:
         lerArquivo(arq)
