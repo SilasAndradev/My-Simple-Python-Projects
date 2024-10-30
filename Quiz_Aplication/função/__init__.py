@@ -1,30 +1,38 @@
 from time import sleep
-def tempo():
-    j = 0
+def tempo(acabouQuest):
+    print('O jogo começou, boa sorte!')
     for j in range(59, 0, -1):
+        if acabouQuest:
+            print(f'Parabéns, você terminou faltando {j} segundos!')
+            break
+        else:
+            print(f'Infelizmente você perdeu!')
         sleep(1)
-        j+=1
-        print(j)
+        if j == 30:
+            print('Faltam 30 segundos!')
+        elif j == 15:
+            print('Faltam 15 segundos!')
+        elif j == 5:
+            print('Faltam 5 segundos!')
+    
+    
+        
     
 
 
-def quiz(questions):
-    if not questions:
-        print("Nenhuma pergunta fornecida.")
-        return
+def quiz(questions, acabouTemp):
+    acabou = False
     for perguntas, resposta in questions.items():
+        if acabouTemp == True:
+            break
         print(f'{perguntas}')
-        if not resposta or not isinstance(resposta, list):
-            print("Opções de resposta inválidas fornecidas.")
-            continue
         print(sorted(resposta))
         resposta_correta = resposta[0]
-        try:
-            suaResp = str(input(''))
-        except EOFError:
-            print("Ocorreu um erro de entrada.")
-            continue
+
+        suaResp = input('')
+        
         if suaResp == resposta_correta:
             print('Resposta correta')
         else:
             print('Resposta incorreta')
+    return acabou == True

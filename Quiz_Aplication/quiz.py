@@ -1,5 +1,5 @@
 from função import *
-questions = {
+questões = {
     "Quem descobriu o Brasil?":[
         "Pedro Álvares Cabral", 
         "Messi", 
@@ -14,5 +14,8 @@ questions = {
         ],
 }
 
-tempo()
-
+acabouQuest = 0
+acabouTemp = 0
+while acabouQuest == False or acabouTemp == False:
+    acabouQuest = quiz(questões, acabouTemp); acabouTemp = tempo(acabouQuest) 
+    
