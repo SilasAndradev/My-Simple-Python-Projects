@@ -6,10 +6,6 @@ def tempo(acabouQuest):
         if acabouQuest:
             print(f'Parabéns, você terminou faltando {j} segundos!')
             break
-
-        else:
-            print(f'Infelizmente você perdeu!')
-            return acabou == True
             
         sleep(1)
 
@@ -22,6 +18,8 @@ def tempo(acabouQuest):
         elif j == 5:
             print('Faltam 5 segundos!')
 
+    return acabou == True
+
 def quiz(questions, acabouTemp):
     acabou = False
     for perguntas, resposta in questions.items():
@@ -32,7 +30,7 @@ def quiz(questions, acabouTemp):
         print(sorted(resposta))
         resposta_correta = resposta[0]
 
-        suaResp = input('')
+        suaResp = input('Escreva sua resposta: ')
         
         if suaResp == resposta_correta:
             print('Resposta correta')

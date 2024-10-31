@@ -1,31 +1,40 @@
-from função import *
-import threading
+from função import tempo, quiz
+import threading 
+
+
+
+
 questões = {
-    "Quem descobriu o Brasil?":[
-        "Pedro Álvares Cabral", 
-        "Messi", 
-        "cristiano Ronaldo", 
+    "Quem descobriu o Brasil?": [
+        "Pedro Álvares Cabral",
+        "Messi",
+        "Cristiano Ronaldo",
         "Não foi descoberto"
-        ],
-    "Qual a população da china?":[
-        "1.411 Bilhão", 
-        "1.509 Bilhão", 
-        "1.659 Bilhão", 
+    ],
+    "Qual a população da China?": [
+        "1.411 Bilhão",
+        "1.509 Bilhão",
+        "1.659 Bilhão",
         "1.312 Bilhão"
-        ],
+    ],
 }
 
-acabouQuest = 0
-acabouTemp = 0
-while acabouQuest == False or acabouTemp == False:
-    
-    acabouQuest = quiz_thread = threading.Thread(target=quiz, args=(questões, acabouTemp))
-    acabouTemp = tempo_thread = threading.Thread(target=tempo, args=(acabouQuest))
-    
-    quiz_thread.start()
-    tempo_thread.start()
+acabouQuest = False
+acabouTemp = False
 
 
-quiz_thread.join()
-tempo_thread.join()
-    
+p1 = threading.Thread(target=quiz, kwargs={'questões': questões, 'acabouTemp': acabouTemp, })
+p2 = threading.Thread(target=tempo, kwargs=({'acabouQuest': acabouQuest}))
+
+while acabouTemp == False or acabouQuest == False:
+        p1.start()
+        p2.start()
+        if p1.not_alive():
+            p2.join()
+            break
+        elif p2.not_alive():
+            p1.join()
+            break
+        
+
+#while not p1.is_alive() or not p2.is_alive():
