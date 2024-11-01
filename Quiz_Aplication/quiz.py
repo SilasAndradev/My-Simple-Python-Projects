@@ -1,5 +1,6 @@
 from função import tempo, quiz
-import threading 
+from threading import Thread
+from threading import Event
 
 
 
@@ -18,23 +19,21 @@ questões = {
         "1.312 Bilhão"
     ],
 }
-
+ 
 acabouQuest = False
 acabouTemp = False
 
 
-p1 = threading.Thread(target=quiz, kwargs={'questões': questões, 'acabouTemp': acabouTemp, })
-p2 = threading.Thread(target=tempo, kwargs=({'acabouQuest': acabouQuest}))
 
-while acabouTemp == False or acabouQuest == False:
-        p1.start()
-        p2.start()
-        if p1.not_alive():
-            p2.join()
-            break
-        elif p2.not_alive():
-            p1.join()
-            break
-        
+p1 = Thread(target=quiz, args=(questões, acabouTemp))
+p2 = Thread(target=tempo, args=(acabouQuest,))
+thread2 = MyThread(p1)
+thread2.start()
+thread1 = MyThread(p2)
+thread1.start()
 
-#while not p1.is_alive() or not p2.is_alive():
+if p1 == True or p2 == False:
+   p1.set()
+   thread1.join()
+   p2.set()
+   thread2.join()

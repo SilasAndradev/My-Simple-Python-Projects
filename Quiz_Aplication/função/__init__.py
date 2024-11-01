@@ -1,6 +1,6 @@
+import threading
 from time import sleep
 def tempo(acabouQuest):
-    acabou = False
     print('O jogo começou, boa sorte!')
     for j in range(59, 0, -1):
         if acabouQuest:
@@ -18,22 +18,26 @@ def tempo(acabouQuest):
         elif j == 5:
             print('Faltam 5 segundos!')
 
-    return acabou == True
+    return acabouQuest == True
 
 def quiz(questions, acabouTemp):
-    acabou = False
-    for perguntas, resposta in questions.items():
+    while True:
+        global stop_threads
+        for perguntas, resposta in questions.items():
 
-        if acabouTemp:
-            break
-        print(f'{perguntas}')
-        print(sorted(resposta))
-        resposta_correta = resposta[0]
+            if acabouTemp:
+                break
+            print(f'{perguntas}')
+            print(sorted(resposta))
+            resposta_correta = resposta[0]
 
-        suaResp = input('Escreva sua resposta: ')
-        
-        if suaResp == resposta_correta:
-            print('Resposta correta')
-        else:
-            print('Resposta incorreta')
-    return acabou == True
+            suaResp = input('Escreva sua resposta: ')
+            if stop_threads:
+                break
+            if suaResp == resposta_correta:
+                print('Resposta correta')
+            else:
+                print('Resposta incorreta')
+        return acabouTemp == True
+
+    
