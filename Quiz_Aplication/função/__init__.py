@@ -1,43 +1,47 @@
 import threading
 from time import sleep
-def tempo(acabouQuest):
-    print('O jogo começou, boa sorte!')
-    for j in range(59, 0, -1):
-        if acabouQuest:
-            print(f'Parabéns, você terminou faltando {j} segundos!')
-            break
-            
+def tempo(acabou=False):
+    timer = 60
+    while timer > 0:
         sleep(1)
+        timer -= 1
+        if acabou:
+            break
+        if timer == 30:
+            print('Restam apenas 30 segundos.')
+        elif timer == 15:
+            print('Restam apenas 15 segundos.')
+        elif timer == 5:
+            print('Restam apenas 5 segundos.')
+        elif timer == 0:
+            print('Acabou o tempo')
+            break
+    return acabou
 
-        if j == 30:
-            print('Faltam 30 segundos!')
+        
 
-        elif j == 15:
-            print('Faltam 15 segundos!')
-            
-        elif j == 5:
-            print('Faltam 5 segundos!')
-
-    return acabouQuest == True
-
-def quiz(questions, acabouTemp):
+def quiz(questions):
+    conta = len(questions)
+    cont = 0
     while True:
-        global stop_threads
+        acabou = False
+        tempo(acabou)
+        
         for perguntas, resposta in questions.items():
-
-            if acabouTemp:
-                break
             print(f'{perguntas}')
-            print(sorted(resposta))
+
+            print(','.join(sorted(resposta)))
+
             resposta_correta = resposta[0]
 
             suaResp = input('Escreva sua resposta: ')
-            if stop_threads:
-                break
+
             if suaResp == resposta_correta:
                 print('Resposta correta')
             else:
                 print('Resposta incorreta')
-        return acabouTemp == True
-
-    
+            cont += 1
+        if cont == conta:
+            acabou = True
+            break
+            
