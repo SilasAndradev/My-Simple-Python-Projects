@@ -1,7 +1,10 @@
 from função import tempo, quiz
 import threading as th
 
+# Configuração inicial
 config = {"estado": True}
+
+# Dicionário de perguntas e respostas
 questões = {
     "Quem descobriu o Brasil?": [
         "Pedro Álvares Cabral",
@@ -17,9 +20,7 @@ questões = {
     ],
 }
 
-
-
-# Inicia a thread principal do quiz
+# Inicia a thread do quiz
 principal = th.Thread(target=quiz, args=(questões, config))
 principal.start()
 
@@ -27,5 +28,6 @@ principal.start()
 cont = th.Thread(target=tempo, args=(config,))
 cont.start()
 
+# Aguarda o término de ambas as threads
 cont.join()
 principal.join()
