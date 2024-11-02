@@ -1,5 +1,7 @@
 from função import tempo, quiz
+import threading as th
 
+config = {"estado": True}
 questões = {
     "Quem descobriu o Brasil?": [
         "Pedro Álvares Cabral",
@@ -14,5 +16,16 @@ questões = {
         "1.312 Bilhão"
     ],
 }
- 
-quiz(questões)
+
+
+
+# Inicia a thread principal do quiz
+principal = th.Thread(target=quiz, args=(questões, config))
+principal.start()
+
+# Inicia a thread do temporizador
+cont = th.Thread(target=tempo, args=(config,))
+cont.start()
+
+cont.join()
+principal.join()
