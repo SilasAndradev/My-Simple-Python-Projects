@@ -1,6 +1,7 @@
 import threading as th
 from time import sleep
 config = {"estado": True}
+
 def tempo(config):
     timer = 60
     try:
@@ -27,10 +28,6 @@ def tempo(config):
         
     return config["estado"] == False
             
-            
-
-        
-
 def quiz(questions, config):    
         sleep(2)
         while True:
@@ -41,7 +38,7 @@ def quiz(questions, config):
                         
                     print(f'{perguntas}')
 
-                    print(','.join(sorted(resposta)))
+                    print(f"{','.join(sorted(resposta))}\n")
 
                     resposta_correta = resposta[0]
 
