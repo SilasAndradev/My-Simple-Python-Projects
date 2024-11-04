@@ -5,6 +5,7 @@ config = {"estado": True}
 
 # Função do temporizador
 def tempo(config):
+    
     timer = 60 # Tempo
     
     try:
