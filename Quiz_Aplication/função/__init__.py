@@ -49,7 +49,7 @@ def quiz(questions, config):
 
                 # Mostrar as perguntas e respostas
                 print(f'{perguntas}')
-                print(f"{', '.join(sorted(resposta)\n)}")
+                print(f"{', '.join(sorted(resposta))}")
 
                 # Guarda a resposta correta
                 resposta_correta = resposta[0]
@@ -65,9 +65,10 @@ def quiz(questions, config):
                     print(f'Resposta incorreta. A resposta correta seria {resposta_correta}')
             
             else:
+                config["estado"] = False
                 print("O tempo acabou. Quiz encerrado.")
                 print(f'Você fez {score} pontos')
                 break
-        print(f'Você marcou {score} pontos.')
-        # Encerra o quiz
-        config["estado"] = False
+    print(f'Você marcou {score} pontos.')
+    # Encerra o quiz
+    
