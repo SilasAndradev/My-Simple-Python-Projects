@@ -71,4 +71,3 @@ def quiz(questions, config):
                 break
     print(f'Você marcou {score} pontos.')
     # Encerra o quiz
-    

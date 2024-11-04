@@ -18,6 +18,12 @@ questões = {
         "1.659 Bilhão",
         "1.312 Bilhão"
     ],
+    "Qual a maior empresa do mundo?":[
+        "Strawberry Studio",
+        "Nvidia"
+        "Google"
+        "Microsoft"
+    ]
 }
 
 # Inicia a thread do quiz
