@@ -39,7 +39,7 @@ def tempo(config):
 def quiz(questions, config):
     score = 0
     sleep(2)
-    while config["estado"]:  # Continua enquanto `estado` for True
+    while config["estado"]:  # Continua enquanto 'estado' for True
         for perguntas, resposta in questions.items():
             if config["estado"]:
                 
