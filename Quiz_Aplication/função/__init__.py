@@ -49,7 +49,7 @@ def quiz(questions, config):
 
                 # Mostrar as perguntas e respostas
                 print(f'{perguntas}')
-                print(f"{', '.join(sorted(resposta))}\n")
+                print(f"{', '.join(sorted(resposta)\n)}")
 
                 # Guarda a resposta correta
                 resposta_correta = resposta[0]
