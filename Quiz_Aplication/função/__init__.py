@@ -31,7 +31,6 @@ def tempo(config):
                 print('Restam apenas 5 segundos.')
             elif timer == 0:
                 config["estado"] = False
-                print('Acabou o tempo')
 
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
