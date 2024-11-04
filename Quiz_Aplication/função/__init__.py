@@ -69,6 +69,6 @@ def quiz(questions, config):
                 print("O tempo acabou. Quiz encerrado.")
                 print(f'Você fez {score} pontos')
                 break
-        
+        print(f'Você marcou {score} pontos.')
         # Encerra o quiz
         config["estado"] = False
