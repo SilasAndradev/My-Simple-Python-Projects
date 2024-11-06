@@ -2,7 +2,7 @@ from função import tempo, quiz
 import threading as th
 
 # Configuração inicial
-config = {"estado": True}
+
 
 # Dicionário de perguntas e respostas
 questões = {
