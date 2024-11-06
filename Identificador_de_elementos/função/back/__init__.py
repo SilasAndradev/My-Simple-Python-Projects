@@ -1,5 +1,9 @@
 from time import sleep
+from Identificador_de_elementos.função.arquivo import * 
 import threading as th
+
+def questões():
+    lerArquivo()
 
 def quiz(questions, config):
     score = 0
@@ -67,7 +71,7 @@ def tempo(config):
 
 def quizTemp():
     config = {"estado": True}
-    
+
     principal = th.Thread(target=quiz, args=(questões, config))
     principal.start()
 

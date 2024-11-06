@@ -1,5 +1,3 @@
-
-
 def linhas():
     print('-=' * 30)
 
@@ -67,13 +65,18 @@ def criarArquivo(txt):
     else:
         print(f'Arquivo {txt} criado com sucesso')
 
-def lerArquivoCOM(txt):
+def lerArquivo(txt):
     try:
         a = open(txt, 'rt')
     except:
         print('Erro ao ler o arquivo!')
 
 def lerArquivoSEM(txt):
+    try:
+        a = open(txt, 'rt')
+    except:
+        print('Erro ao ler o arquivo!')
+def lerArquivoCOM(txt):
     try:
         a = open(txt, 'rt')
     except:

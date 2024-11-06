@@ -21,3 +21,5 @@ while True:
         lerArquivoCOM()
     elif resposta == 3:
         quiz()
+    elif resposta == 4:
+        break
