@@ -1,5 +1,5 @@
 from time import sleep
-from Identificador_de_elementos.função.arquivo import * 
+from função.arquivo import * 
 import threading as th
 
 def questões():
