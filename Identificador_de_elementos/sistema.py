@@ -4,8 +4,8 @@
 # elemento químico sabendo suas propriedades)
 # 2. Lista todos os elementos químicos, com e sem suas propriedades
 
-from Identificador_de_elementos.função.arquivo import * 
-from Identificador_de_elementos.função.back import * 
+from função.arquivo import * 
+from função.back import * 
 
 arquivo = 'elementos.txt'
 config = {"estado": True}
