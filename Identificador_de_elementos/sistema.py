@@ -5,7 +5,7 @@
 # 2. Lista todos os elementos químicos, com e sem suas propriedades
 
 from função.arquivo import * 
-from função.back import * 
+from função.quiz import * 
 
 arquivo = 'elementos.txt'
 config = {"estado": True}
