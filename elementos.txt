@@ -1,3 +1,10 @@
 Hidrogênio;1;H;1,008u
-Lítio;3;Li;6,941u
 Hélio;2;He;4,0026u
+Lítio;3;Li;6,941u
+Berílio;4;Be;9,0122u
+Boro;5;B;10,81u
+Carbono;6;C;12,001u
+Nitrogênio;7;N;14,004u
+Oxigênio;8;O;15,999u
+Flúor;9;F;18,998u
+Neónio;10;Ne;20,180u

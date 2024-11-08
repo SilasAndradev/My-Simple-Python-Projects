@@ -1,20 +1,18 @@
 from time import sleep
-from random import randint
+import random
 import threading as th
 from função.arquivo import * 
 
-def questões():
-    lerArquivo()
-
 def quiz(txt, config):
+    
     score = 0
     elemento = dict()
     sleep(2)
     while config["estado"]:  # Continua enquanto 'estado' for True
-        
         a = open(txt, 'rt')
-        for linha in a:
-            linhas()
+        linha = txt.readlines()
+        for j in range(10):
+            random.choice(linha)
             dado = linha.split(';')
             
             # Mostra a pergunta
