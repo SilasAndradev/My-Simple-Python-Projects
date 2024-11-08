@@ -1,5 +1,3 @@
 Hidrogênio;1;H;1,008u
-Hidrogênio;1;H;1,008u
-Hidrogênio;1;H;1,008u
-Hidrogênio;1;H;1,008u
-Hidrogênio;1;H;1,008u
+Lítio;3;Li;6,941u
+Hélio;2;He;4,0026u

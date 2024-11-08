@@ -20,6 +20,7 @@ while True:
     elif resposta == 2:
         lerArquivoCOM(arquivo)
     elif resposta == 3:
-        quiz()
+        quizTemp()
     elif resposta == 4:
+        quiz(arquivo, config)
         break

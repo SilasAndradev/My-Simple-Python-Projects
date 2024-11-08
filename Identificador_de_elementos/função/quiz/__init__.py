@@ -1,43 +1,38 @@
 from time import sleep
-from função.arquivo import * 
+from random import randint
 import threading as th
+from função.arquivo import * 
 
 def questões():
     lerArquivo()
 
-def quiz(questions, config):
+def quiz(txt, config):
     score = 0
+    elemento = dict()
     sleep(2)
     while config["estado"]:  # Continua enquanto 'estado' for True
-        for perguntas, resposta in questions.items():
-            if config["estado"]:
-                
-                # Valida a resposta
-                if not isinstance(perguntas, str) or not isinstance(resposta, list) or len(resposta) == 0:
-                    raise ValueError("Pergunta inválida: deve ser uma string não vazia e a resposta deve ser uma lista não vazia")
-
-                # Mostrar as perguntas e respostas
-                print(f'{perguntas}')
-                print(f"{', '.join(sorted(resposta))}")
-
-                # Guarda a resposta correta
-                resposta_correta = resposta[0]
-
-                # Faz o pedido para escrever a resposta
-                suaResp = input('Escreva sua resposta: ')
-
-                # Verificar a resposta
-                if suaResp == resposta_correta:
-                    score += 1
-                    print('Resposta correta')
-                else:
-                    print(f'Resposta incorreta. A resposta correta seria {resposta_correta}')
+        a = open(txt, 'rt')
+        for linha in a:
+            dado = linha.split(';')
             
+            # Mostra a pergunta
+            print(f"Qual o elemento químico que possui:\n - O número atômico: {dado[1]};\n - O símbolo: {dado[2]};\n - A massa atômica: {dado[3].strip()}.")
+
+            # Guarda a resposta correta
+            resposta_correta = dado[0]
+
+            # Faz o pedido para escrever a resposta
+            suaResp = input('Digite o elemento químico: ')
+
+            # Verificar a resposta
+            if suaResp == resposta_correta:
+                score += 1
+                print('Resposta correta')
             else:
-                config["estado"] = False
-                print("O tempo acabou. Quiz encerrado.")
-                print(f'Você fez {score} pontos')
-                break
+                print(f'Resposta incorreta. A resposta correta seria {resposta_correta}')
+        config["estado"] = False
+
+    print("O tempo acabou. Quiz encerrado.")
     print(f'Você marcou {score} pontos.')
    
 def tempo(config):
