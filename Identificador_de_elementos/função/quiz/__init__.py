@@ -4,7 +4,7 @@ import threading as th
 from função.arquivo import * 
 
 def quiz(txt, config):
-    with open('elementos.txt', 'r', encoding='utf-8') as txt:
+    with open("Identificador_de_elementos/elementos.txt", 'r', encoding='utf-8') as txt:
         linhas = txt.readlines()
     score = 0
     sleep(2)
@@ -55,11 +55,11 @@ def tempo(config):
         
         # Mostrar as mensagens de acordo com o tempo que passou
         if timer == 30:
-            print('Restam apenas 30 segundos.')
+            print('\nRestam apenas 30 segundos.')
         elif timer == 15:
-            print('Restam apenas 15 segundos.')
+            print('\nRestam apenas 15 segundos.')
         elif timer == 5:
-            print('Restam apenas 5 segundos.')
+            print('\nRestam apenas 5 segundos.')
         elif timer == 0:
             config["estado"] = False
 
