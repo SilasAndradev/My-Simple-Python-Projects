@@ -55,7 +55,7 @@ def quiz(questions, config):
                 resposta_correta = resposta[0]
 
                 # Faz o pedido para escrever a resposta
-                suaResp = input('Escreva sua resposta: ')
+                suaResp = input('\033[0;34mSua resposta: \033[0m')
 
                 # Verificar a resposta
                 if suaResp == resposta_correta:

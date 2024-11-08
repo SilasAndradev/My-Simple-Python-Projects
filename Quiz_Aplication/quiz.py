@@ -23,6 +23,12 @@ questões = {
         "Nvidia",
         "Google",
         "Microsoft"
+    ],
+    "Qual a melhor linguagem de programção?":[
+        "Python",
+        "C++",
+        "C",
+        "JavaScript"
     ]
 }
 
