@@ -60,14 +60,14 @@ def quiz(questions, config):
                 # Verificar a resposta
                 if suaResp == resposta_correta:
                     score += 1
-                    print('Resposta correta')
+                    print(f'\033[0;34mResposta correta\033[0m')
                 else:
-                    print(f'Resposta incorreta. A resposta correta seria {resposta_correta}')
-            
+                    print(f'\033[0;33mResposta incorreta. A resposta correta seria {resposta_correta}\033[0m')
+        
             else:
-                config["estado"] = False
                 print("O tempo acabou. Quiz encerrado.")
                 print(f'Você fez {score} pontos')
                 break
+        config["estado"] = False 
     print(f'Você marcou {score} pontos.')
     # Encerra o quiz
