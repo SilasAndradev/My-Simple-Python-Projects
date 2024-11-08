@@ -10,6 +10,7 @@ def cabecalho(txt):
     linhas()
 
 def menu():
+    # Mostrar as opções de ações do usuário
     print(' 1 - Listar os elementos químicos')
     print(' 2 - Listar os elementos químicos (com suas propriedades)')
     print(' 3 - Jogo da advinhação')
@@ -28,29 +29,9 @@ def menu():
                 break
     linhas()        
 
-def leiaInt():
-    while True:
-        try:
-            numero = int(input('Digite o código do produto: '))    
-        except KeyboardInterrupt:
-            print('\033[0;31mO usuário prefiriu não digitar esse número.\033[m')
-        except ValueError:
-            print('\033[0;31mO usuário digitou um número inteiro invállido.\033[m')
-        else:   
-            return numero
-        
-def leiafloat():
-    while True:
-        try:
-            numero = float(input('Digite o valor do produto: '))    
-        except KeyboardInterrupt:
-            print('\033[0;31mO usuário prefiriu não digitar esse número.\033[m')
-        except ValueError:
-            print('\033[0;31mO usuário digitou um número real invállido.\033[m')
-        else:   
-            return numero
 
 def arquivoExiste(txt):
+    # Verifica se o arquivo existe
     try:
         a = open(txt, 'rt')
         a.close()
@@ -60,6 +41,7 @@ def arquivoExiste(txt):
         return True
     
 def criarArquivo(txt):
+    # Cria um arquivo
     try:
         a = open(txt, 'wt+') 
         a.close()
@@ -69,6 +51,7 @@ def criarArquivo(txt):
         print(f'Arquivo {txt} criado com sucesso')
 
 def lerArquivoSEM(txt):
+    # Ler o arquivo mostrando apenas o nome
     try:
         linhas()
         a = open(txt, 'rt')
@@ -79,6 +62,7 @@ def lerArquivoSEM(txt):
     except:
         print('Erro ao ler o arquivo!')
 def lerArquivoCOM(txt):
+    # Ler o arquivo mostrando o nome e suas propriedades
     try:
         linhas()
         a = open(txt, 'rt')

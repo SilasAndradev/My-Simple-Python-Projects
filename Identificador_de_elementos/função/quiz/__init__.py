@@ -6,12 +6,14 @@ from função.arquivo import *
 def quiz(txt, config):
     with open("Identificador_de_elementos/elementos.txt", 'r', encoding='utf-8') as txt:
         linhas = txt.readlines()
+        linhasCopy = linhas.copy()
     score = 0
     sleep(2)
     while config["estado"]:  # Continua enquanto 'estado' for True
         
-        for j in range(10):
-            linha = random.choice(linhas)
+        for j in range(13):
+            # Escolhe um elemento qúimico aleatório
+            linha = random.choice(linhasCopy)
             dado = linha.split(';')
             
             # Mostra a pergunta
@@ -29,6 +31,7 @@ def quiz(txt, config):
                 print(f'\033[0;34mResposta correta.\033[0m')
             else:
                 print(f'\033[0;34mResposta incorreta. A resposta correta seria {resposta_correta}\033[0m')
+            linhasCopy.remove(linha)
         config["estado"] = False
 
     linhasSimples()
@@ -66,7 +69,6 @@ def tempo(config):
 
 
 def quizTemp(txt, config):
-    config = {"estado": True}
 
     principal = th.Thread(target=quiz, args=(txt, config,))
     principal.start()
@@ -76,5 +78,7 @@ def quizTemp(txt, config):
     cont.start()
 
     # Aguarda o término de ambas as threads
+
+
     cont.join()
     principal.join()
