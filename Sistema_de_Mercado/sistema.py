@@ -9,7 +9,6 @@ if not ar.arquivoExiste(arq):
 while True:
     cabecalho('Mercado de Jadinho')
     resposta = menu()
-    resposta = menu()
     if resposta == 1:
         ar.lerArquivo(arq)
     elif resposta == 2:

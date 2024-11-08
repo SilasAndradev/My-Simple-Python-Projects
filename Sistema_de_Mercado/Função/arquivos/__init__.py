@@ -1,4 +1,4 @@
-from Interface import *
+from Função.Interface import *
 from time import *
 def arquivoExiste(txt):
     try:
@@ -50,7 +50,8 @@ def mostrar(txt):
     print(f'{'Código':<30}{'Nome'.center(30)}{'Preço':>30}')
     for linha in a:
         dado = linha.split(';')
-        print(f'{dado[0].replace("'", ""):<30}{dado[1].replace("'", "").center(30)}{dado[2].replace("'", "").replace("\n", ""):>30}')
+        dado[2] = dado[2].replace("\n", "").replace("'", "")
+        print(f"{dado[0].replace("'", ""):<30}{dado[1].replace("'", "").center(30)}{dado[2]:>30.2f}")
     a.close()
 
 def InserirCodigo(txt, codigo):
