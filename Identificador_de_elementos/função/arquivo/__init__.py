@@ -76,7 +76,6 @@ def lerArquivoSEM(txt):
         for linha in a:
             dado = linha.split(';')
             print(f'\033[0;34mNome: \033[m{dado[0]}')
-        linhas()
     except:
         print('Erro ao ler o arquivo!')
 def lerArquivoCOM(txt):
@@ -91,8 +90,6 @@ def lerArquivoCOM(txt):
             print(f'\033[0;34mNúmero Atômico: \033[m{dado[1]}')
             print(f'\033[0;34mSímbolo: \033[m{dado[2]}')
             print(f'\033[0;34mMassa Atômica: \033[m{dado[3]}')
-        linhas()
 
     except:
         print('Erro ao ler o arquivo!')
-    
