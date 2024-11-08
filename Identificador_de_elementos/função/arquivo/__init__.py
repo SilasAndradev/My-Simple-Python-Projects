@@ -1,6 +1,9 @@
 def linhas():
     print('-=' * 30)
 
+def linhasSimples():
+    print('--' * 30)
+
 def cabecalho(txt):
     linhas()
     print(txt.center(60))
@@ -16,7 +19,7 @@ def menu():
         try:
             resposta = int(input('\033[0;33mSua Opção: \033[m'))
         except ValueError:     
-            print('\033[0;31mERRO! O usuário não digitou um número inteiro válido.\033[m')
+            print('\033[0;31mERRO! O usuário não digitou um número inteiro.\033[m')
         else:
                 if resposta > 4 or resposta < 1:
                     print('\033[0;31mERRO! O usuário digitou um número inteiro invállido.\033[m')
@@ -73,12 +76,29 @@ def lerArquivo(txt):
 
 def lerArquivoSEM(txt):
     try:
+        linhas()
         a = open(txt, 'rt')
+        print(f'{'\033[0;34mLista dos Elementos\033[m'.center(30)}')
+        for linha in a:
+            dado = linha.split(';')
+            print(f'\033[0;34mNome: \033[m{dado[0]}')
+        linhas()
     except:
         print('Erro ao ler o arquivo!')
 def lerArquivoCOM(txt):
     try:
+        linhas()
         a = open(txt, 'rt')
+        print(f'{'\033[0;34mLista dos Elementos\033[m'.center(30)}')
+        for linha in a:
+            linhasSimples()
+            dado = linha.split(';')
+            print(f'\033[0;34mNome: \033[m{dado[0]}')
+            print(f'\033[0;34mNúmero Atômico: \033[m{dado[1]}')
+            print(f'\033[0;34mSímbolo: \033[m{dado[2]}')
+            print(f'\033[0;34mMassa Atômica: \033[m{dado[3]}')
+        linhas()
+
     except:
         print('Erro ao ler o arquivo!')
     

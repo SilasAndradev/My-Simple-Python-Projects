@@ -16,9 +16,9 @@ if not arquivoExiste(arquivo):
 while True:
     resposta = menu()
     if resposta == 1:
-        lerArquivoSEM()
+        lerArquivoSEM(arquivo)
     elif resposta == 2:
-        lerArquivoCOM()
+        lerArquivoCOM(arquivo)
     elif resposta == 3:
         quiz()
     elif resposta == 4:
