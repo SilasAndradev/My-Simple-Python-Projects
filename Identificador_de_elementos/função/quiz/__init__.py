@@ -11,8 +11,10 @@ def quiz(txt, config):
     elemento = dict()
     sleep(2)
     while config["estado"]:  # Continua enquanto 'estado' for True
+        
         a = open(txt, 'rt')
         for linha in a:
+            linhas()
             dado = linha.split(';')
             
             # Mostra a pergunta
@@ -27,9 +29,9 @@ def quiz(txt, config):
             # Verificar a resposta
             if suaResp == resposta_correta:
                 score += 1
-                print('Resposta correta')
+                print('')
             else:
-                print(f'Resposta incorreta. A resposta correta seria {resposta_correta}')
+                print(f'\033[0;34Resposta incorreta. A resposta correta seria {resposta_correta}\033[m')
         config["estado"] = False
 
     print("O tempo acabou. Quiz encerrado.")
