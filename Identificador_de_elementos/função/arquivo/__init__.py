@@ -68,20 +68,6 @@ def criarArquivo(txt):
     else:
         print(f'Arquivo {txt} criado com sucesso')
 
-def lerArquivo(txt):
-    elemento = dict()
-    try:
-        a = open(txt, 'rt')
-        for linha in a:
-            dado = linha.split(';')
-            elemento['nome'] = dado[0]
-            elemento['numAtom'] = dado[1]
-            elemento['simbolo'] = dado[2]
-            elemento['massaAtom'] = dado[3].strip()
-            print(elemento)
-    except:
-        print('Erro ao ler o arquivo!')
-
 def lerArquivoSEM(txt):
     try:
         linhas()

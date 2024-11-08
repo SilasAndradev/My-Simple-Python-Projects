@@ -4,14 +4,14 @@ import threading as th
 from função.arquivo import * 
 
 def quiz(txt, config):
-    
+    with open('elementos.txt', 'r', encoding='utf-8') as txt:
+        linhas = txt.readlines()
     score = 0
     sleep(2)
     while config["estado"]:  # Continua enquanto 'estado' for True
-        a = open(txt, 'rt')
-        linha = txt.readlines()
+        
         for j in range(10):
-            random.choice(linha)
+            linha = random.choice(linhas)
             dado = linha.split(';')
             
             # Mostra a pergunta
@@ -26,11 +26,12 @@ def quiz(txt, config):
             # Verificar a resposta
             if suaResp == resposta_correta:
                 score += 1
-                print('')
+                print(f'\033[0;34mResposta correta.\033[0m')
             else:
-                print(f'\033[0;34Resposta incorreta. A resposta correta seria {resposta_correta}\033[m')
+                print(f'\033[0;34mResposta incorreta. A resposta correta seria {resposta_correta}\033[0m')
         config["estado"] = False
 
+    linhasSimples()
     print("O tempo acabou. Quiz encerrado.")
     print(f'Você marcou {score} pontos.')
    
@@ -49,6 +50,7 @@ def tempo(config):
             timer -= 1
         else:
             print(f'Você terminou com {timer} segundos restantes.')
+            linhas()
             break 
         
         # Mostrar as mensagens de acordo com o tempo que passou
@@ -63,10 +65,10 @@ def tempo(config):
 
 
 
-def quizTemp():
+def quizTemp(txt, config):
     config = {"estado": True}
 
-    principal = th.Thread(target=quiz, args=(questões, config))
+    principal = th.Thread(target=quiz, args=(txt, config,))
     principal.start()
 
     # Inicia a thread do temporizador
