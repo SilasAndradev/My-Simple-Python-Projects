@@ -29,7 +29,4 @@ while True:
     elif resposta == 3:
         quizTemp(arquivo, config)
     elif resposta == 4:
-        with open("Identificador_de_elementos/elementos.txt", 'r', encoding='utf-8') as txt:
-            linhas = txt.readlines()
-            print(linhas)
         break
