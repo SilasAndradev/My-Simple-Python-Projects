@@ -6,7 +6,6 @@ from função.arquivo import *
 def quiz(txt, config):
     
     score = 0
-    elemento = dict()
     sleep(2)
     while config["estado"]:  # Continua enquanto 'estado' for True
         a = open(txt, 'rt')
