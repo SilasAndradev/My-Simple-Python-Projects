@@ -63,12 +63,12 @@ def InserirCodigo(txt, codigo):
         dado = linha.split(';')
         if codigo == int(dado[0]):
             encontrado = True
-            print(f'{dado[1].replace("'", "")}\n{dado[2].replace("\n","")}')
+            print(f'{dado[1].replace("'", "")}, R${dado[2].replace("\n","")}')
             valor = float(dado[2].replace('\n',''))
     if not encontrado:
         print('Código não encontrado.')
-    return valor
     a.close()
+    return valor
 
 def compras(txt):
     valorTotal = 0
