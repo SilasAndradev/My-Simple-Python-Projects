@@ -13,7 +13,7 @@ E faz as seguintes coisas:
 from função.arquivo import * 
 from função.quiz import * 
 
-arquivo = 'elementos.txt'
+arquivo = "Identificador_de_elementos/elementos.txt"
 config = {"estado": True}
 
 if not arquivoExiste(arquivo):

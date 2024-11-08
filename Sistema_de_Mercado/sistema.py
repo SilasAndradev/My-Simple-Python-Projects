@@ -1,26 +1,26 @@
 from Função.Interface import *
-from Função.arquivos import *
+import Função.arquivos as ar
 
-arq = 'produtos.txt'
+arq = 'Sistema_de_Mercado/produtos.txt'
 
-if not arquivoExiste(arq):
-    criarArquivo(arq)
+if not ar.arquivoExiste(arq):
+    ar.criarArquivo(arq)
 
 while True:
     cabecalho('Mercado de Jadinho')
     resposta = menu()
     resposta = menu()
     if resposta == 1:
-        lerArquivo(arq)
+        ar.lerArquivo(arq)
     elif resposta == 2:
         cabecalho('ADICIONAR PRODUTOS')
         cod = leiaInt()
         nome = str(input('Digite o nome do produto: '))
         preco = leiafloat()
-        adicionar(arq, cod, nome, preco)
+        ar.adicionar(arq, cod, nome, preco)
     elif resposta == 3:
         cabecalho('REALIZAR COMPRAS')
-        compras(arq)
+        ar.compras(arq)
     elif resposta == 4:
         cabecalho('Saindo do Sistema...')
         break
