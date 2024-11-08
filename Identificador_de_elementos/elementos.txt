@@ -8,3 +8,6 @@ Nitrogênio;7;N;14,004u
 Oxigênio;8;O;15,999u
 Flúor;9;F;18,998u
 Neónio;10;Ne;20,180u
+Sódio;11;Na;22,990u
+Magnésio;12;Mg;24,305u
+Alumínio;13;Al;26,982u
