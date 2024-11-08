@@ -47,10 +47,10 @@ def adicionar(txt, cod, nome, preco):
 
 def mostrar(txt):
     a = open(txt, 'rt')
-    print(f'{'Código':<30}{'Nome'.center(30)}{'Preço':>30}')
+    print(f'\033[0;34m{'Código':<30}{'Nome'.center(30)}{'Preço':>30}\033[m')
     for linha in a:
         dado = linha.split(';')
-        dado[2] = dado[2].replace("\n", "").replace("'", "")
+        dado[2] = float(dado[2].replace("\n", "").replace("'", ""))
         print(f"{dado[0].replace("'", ""):<30}{dado[1].replace("'", "").center(30)}{dado[2]:>30.2f}")
     a.close()
 
