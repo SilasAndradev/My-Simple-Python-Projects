@@ -54,7 +54,12 @@ class game:
         while not stop_event.is_set():
             mins, secs = divmod(timer, 60)
             timeformat = f'{mins:02d}:{secs:02d}'
-            print(f'{timeformat:>20}', end='\r')
+            if timer == 30:
+                print('Restam 30 segundos')
+            elif timer == 15:
+                print('Restam 15 segundos')
+            elif timer == 5:
+                print('Restam 5 segundos')
             sleep(1)
             timer -= 1
             if timer == 0:
