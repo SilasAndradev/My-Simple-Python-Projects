@@ -6,7 +6,7 @@ E faz as seguintes coisas:
     que estão no arquivo txt
 2. Mostra os nomes e as propriedades dos elementos químicos
    que estão no arquivo txt
-3. Faz um quiz em que o programa mostra as propriedades
+3. Faz um quiz com tempo em que o programa mostra as propriedades
     dos elementos químicos e o usuário tem que descobrir o seu nome
 """
 
