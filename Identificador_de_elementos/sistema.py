@@ -12,6 +12,7 @@ E faz as seguintes coisas:
 
 from função.arquivo import * 
 from função.quiz import *
+import threading as th
 
 # Declara a classe com as funções
 jogo = game

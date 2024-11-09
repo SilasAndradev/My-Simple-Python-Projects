@@ -1,6 +1,6 @@
 from time import sleep
 import random
-import threading as th
+
 
 class game:
     def quiz(txt, stop_event):
@@ -29,14 +29,14 @@ class game:
             resposta_correta = dado[0]
 
             # Faz o pedido para o usuário escrever a resposta
-            suaResp = input('\nDigite o elemento químico: ')
+            suaResp = input('\n\033[0;34mSua resposta: \033[0m')
 
             # Verificar se a resposta está correta
             if suaResp == resposta_correta:
                 score += 1
                 print(f'\033[0;34mResposta correta.\033[0m')
             else:
-                print(f'\033[0;34mResposta incorreta. A resposta correta seria {resposta_correta}\033[0m')
+                print(f'\033[0;33mResposta incorreta. A resposta correta seria {resposta_correta}\033[0m')
 
             # Remove a linha já utilizada para evitar repetição
             linhasCopy.remove(linha)
