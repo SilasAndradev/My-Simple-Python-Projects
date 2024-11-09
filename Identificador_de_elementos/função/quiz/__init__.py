@@ -41,8 +41,6 @@ class game:
             # Remove a linha já utilizada para evitar repetição
             linhasCopy.remove(linha)
         
-        
-        # Verifica se o evento foi ativado após o término do loop
         print(f'Você marcou {score} pontos.')
         stop_event.set()
 
