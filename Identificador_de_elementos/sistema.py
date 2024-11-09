@@ -11,7 +11,9 @@ E faz as seguintes coisas:
 """
 
 from função.arquivo import * 
-from função.quiz import * 
+from função.quiz import *
+
+stop_event = th.Event()
 
 arquivo = "Identificador_de_elementos/elementos.txt"
 config = {"estado": True}
@@ -27,6 +29,6 @@ while True:
     elif resposta == 2:
         lerArquivoCOM(arquivo)
     elif resposta == 3:
-        quizTemp(arquivo, config)
+        quizTemp(arquivo, stop_event)
     elif resposta == 4:
         break
