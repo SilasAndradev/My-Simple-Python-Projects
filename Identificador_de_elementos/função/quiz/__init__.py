@@ -29,7 +29,7 @@ class game:
             resposta_correta = dado[0]
 
             # Faz o pedido para o usuário escrever a resposta
-            suaResp = input('Digite o elemento químico: ')
+            suaResp = input('\nDigite o elemento químico: ')
 
             # Verificar se a resposta está correta
             if suaResp == resposta_correta:
@@ -53,8 +53,8 @@ class game:
 
         while not stop_event.is_set():
             mins, secs = divmod(timer, 60)
-            timeformat = '{:02d}:{:02d}'.format(mins, secs)
-            print(timeformat, end='\n')
+            timeformat = f'{mins:02d}:{secs:02d}'
+            print(f'{timeformat:>20}', end='\r')
             sleep(1)
             timer -= 1
             if timer == 0:
