@@ -31,7 +31,6 @@ def lerArquivo(txt):
         a.close()
 
 def adicionar(txt, cod, nome, preco):
-    lista = list()
     try:
         a = open(txt, 'at')
     except:
@@ -47,11 +46,11 @@ def adicionar(txt, cod, nome, preco):
 
 def mostrar(txt):
     a = open(txt, 'rt')
-    print(f'\033[0;34m{'Código':<30}{'Nome'.center(30)}{'Preço':>30}\033[m')
+    print(f'\033[0;34m{'Código':<20}{'Nome'.center(20)}{'Preço':>20}\033[m')
     for linha in a:
         dado = linha.split(';')
         dado[2] = float(dado[2].replace("\n", "").replace("'", ""))
-        print(f"{dado[0].replace("'", ""):<30}{dado[1].replace("'", "").center(30)}{dado[2]:>30.2f}")
+        print(f"{dado[0].replace("'", ""):<20}{dado[1].replace("'", "").center(20)}{dado[2]:>20.2f}")
     a.close()
 
 def InserirCodigo(txt, codigo):
