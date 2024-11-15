@@ -49,7 +49,7 @@ def criarArquivo(txt):
         print('Houve um erro na criação do arquivo')
     else:
         print(f'Arquivo {txt} criado com sucesso')
-
+        
 def lerArquivoSEM(txt):
     # Ler o arquivo mostrando apenas o nome
     try:
