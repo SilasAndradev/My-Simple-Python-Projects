@@ -34,7 +34,10 @@ def leiaInt():
         except ValueError:
             print('\033[0;31mO usuário digitou um número inteiro invállido.\033[m')
         else:   
-            return numero
+            if numero < 0:
+                continue
+            else:
+                return numero
         
 def leiafloat():
     while True:
@@ -45,4 +48,7 @@ def leiafloat():
         except ValueError:
             print('\033[0;31mO usuário digitou um número real invállido.\033[m')
         else:   
-            return numero
+            if numero < 0:
+                continue
+            else:
+                return numero

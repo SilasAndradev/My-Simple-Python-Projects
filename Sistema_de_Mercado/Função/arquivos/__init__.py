@@ -10,6 +10,7 @@ def arquivoExiste(txt):
         return True
 
 def criarArquivo(txt):
+    linhas()
     try:
         a = open(txt, 'wt+') 
         a.close()
