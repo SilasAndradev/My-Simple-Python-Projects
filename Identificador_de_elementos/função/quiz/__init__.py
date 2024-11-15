@@ -70,6 +70,4 @@ class game:
             print(f'Você terminou com {timer} segundos restantes.')
         else:
             print(f'O tempo acabou!')
-
-        print('-=' * 30)
         stop_event.set()
