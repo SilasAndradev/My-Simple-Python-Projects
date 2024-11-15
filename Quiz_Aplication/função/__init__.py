@@ -41,10 +41,6 @@ def quiz(questions, config):
     while config["estado"]:  # Continua enquanto 'estado' for True
         for perguntas, resposta in questions.items():
             if config["estado"]:
-                
-                # Valida a resposta
-                if not isinstance(perguntas, str) or not isinstance(resposta, list) or len(resposta) == 0:
-                    raise ValueError("Pergunta inválida: deve ser uma string não vazia e a resposta deve ser uma lista não vazia")
 
                 # Mostrar as perguntas e respostas
                 print(f'{perguntas}')
@@ -53,11 +49,11 @@ def quiz(questions, config):
                 # Guarda a resposta correta
                 resposta_correta = resposta[0]
 
-                # Faz o pedido para escrever a resposta
+                # Faz o pedido para o usuário escrever a resposta
                 suaResp = input('\033[0;34mSua resposta: \033[0m')
 
                 # Verificar a resposta
-                if suaResp == resposta_correta:
+                if suaResp.upper() == resposta_correta.upper():
                     score += 1
                     print(f'\033[0;34mResposta correta\033[0m')
                 else:

@@ -7,10 +7,10 @@ config = {'estado' : True}
 # Dicionário de perguntas e respostas
 questões = {
     "Quem descobriu o Brasil?": [
+        "Não foi descoberto",
         "Pedro Álvares Cabral",
         "Messi",
-        "Cristiano Ronaldo",
-        "Não foi descoberto"
+        "Cristiano Ronaldo"
     ],
     "Qual a população da China?": [
         "1.411 Bilhão",
