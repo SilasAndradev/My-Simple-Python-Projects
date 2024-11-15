@@ -1,5 +1,5 @@
-from PySimpleGUI import PySimpleGUI as sg
-DISPLAY = 0.0
+import PySimpleGUI as sg
+
 
 # Layout
 sg.theme('Reddit')
