@@ -1,4 +1,3 @@
-import threading as th
 from time import sleep
 
 config = {"estado": True}

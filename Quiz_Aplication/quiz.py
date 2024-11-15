@@ -29,7 +29,19 @@ questões = {
         "C++",
         "C",
         "JavaScript"
-    ]
+    ],
+    "Qual é o mais inteligente?":[
+        "Albert Eistein",
+        "Nikolas Tesla",
+        "Marie Curie",
+        "Sócrates"
+    ],
+    "Qual o melhor jogo?":[
+        "Minecraft",
+        "Elden Ring",
+        "GTA V",
+        "Hollow Knight"
+    ],
 }
 
 # Inicia a thread do quiz
