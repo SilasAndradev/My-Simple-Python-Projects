@@ -18,7 +18,9 @@ while True:
         preco = leiafloat()
         ar.adicionar(arq, cod, nome, preco)
     elif resposta == 3:
-        cabecalho('REALIZAR COMPRAS')
+        ar.lerArquivo(arq)
+        linhas()
+        print('REALIZAR COMPRAS'.center(60))
         ar.compras(arq)
     elif resposta == 4:
         cabecalho('Saindo do Sistema...')

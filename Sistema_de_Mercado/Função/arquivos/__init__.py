@@ -72,30 +72,18 @@ def InserirCodigo(txt, codigo):
 
 def compras(txt):
     valorTotal = 0
-    valor = 0
-    try:
-        a = open(txt, 'rt')
-        linhas = a.readlines()
-        print(f'{'\033[0;34mTabela de Preços\033[m'.center(30)}')
-        mostrar(txt)
-    except FileNotFoundError:
-        print(f'Erro ao ler o arquivo {txt}!')
-    else:
-        print('-=' * 30)
-        while True:
-            try:
-                codigo = int(input('Digite o código: '))
-            except ValueError:
-                print('\033[0;31mPor favor, digite um número inteiro.\033[m')
+    print('-=' * 30)
+    while True:
+        try:
+            codigo = int(input('Digite o código: '))
+        except ValueError:
+            print('\033[0;31mPor favor, digite um número inteiro.\033[m')
+        else:
+            if codigo > 0: 
+                valor = InserirCodigo(txt, codigo)
+                valorTotal += valor
             else:
-                if codigo > 0: 
-                    valor = InserirCodigo(txt, codigo)
-                    valorTotal += valor
-                else:
-                    print('-=' * 30)
-                    print('Parando de fazer compras.')
-                    
-                    break
-    
+                print('-=' * 30)
+                print('Parando de fazer compras.')
+                break
     print(f'O valor total da compra foi de {valorTotal}.')
-    a.close()
